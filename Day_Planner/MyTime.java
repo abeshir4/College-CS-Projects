@@ -52,7 +52,7 @@ public class MyTime implements Comparable<MyTime> {
 		//  (quotes are not part of the message):
 		// "Hour must be within [0, 23]!"
 		this.min = 0;
-		if(hour < 0 && hour > 23){ //INVALID HOUR
+		if(hour < 0 || hour > 23){ //INVALID HOUR
 			throw new IllegalArgumentException("Hour must be within [0, 23]!");
 		}
 		else{
@@ -75,7 +75,7 @@ public class MyTime implements Comparable<MyTime> {
 		// Use this _exact_ error message for the exception 
 		//  (quotes are not part of the message):
 		// "Hour must be within [0, 23]; Minute must be within [0, 59]!");
-		if((hour < 0 && hour > 23)||(min < 0 && min > 59)){ //INVALID HOUR AND MINUTE
+		if((hour < 0 || hour > 23)||(min < 0 || min > 59)){ //INVALID HOUR AND MINUTE
 			throw new IllegalArgumentException("Hour must be within [0, 23]; Minute must be within [0, 59]!");
 		}
 		else{
