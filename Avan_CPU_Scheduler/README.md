@@ -33,32 +33,43 @@ You can add additional helper functions, but you cannot change how we compile it
 Summary of Functions for the Avan Scheduler to be finished:
 
 avan_header_t *avan_create();
+
 • Creates the Avan Header struct, which has pointers to all three Linked List Queues.
 
 int avan_insert(avan_header_t *header, process_node_t *process);
+
 • Inserts the Process node in ascending PID order in of the Ready Queue Linked List.
 
 int avan_suspend(avan_header_t *header, pid_t pid);
+
 • Remove a Process from the Ready Queue and Add it (in PID Order) to the Suspended Queue
 
 int avan_resume(avan_header_t *header, pid_t pid);
+
 • Remove a given Process from the Suspended Queue and Add (in PID Order) to the Ready Queue
 
 int avan_quit(avan_header_t *header, process_node_t *process, int exit_code);
+
 • Inserts the Process (in PID Order) to Terminated Queue
 
 int avan_terminate(avan_header_t *header, pid_t pid, int exit_code);
+
 • Remove a Process from the Ready or Suspended Queues and Add (in PID Order) to Terminated Queue
 
 process_node_t *avan_new_process(char *command, pid_t pid, int priority, int critical);
+
 • Create a new Process node from the arguments and return it.
 
 process_node_t *avan_select(avan_header_t *header);
+
 • Remove and return the best Process in your Ready Queue Linked List. (Details in Section 4)
 
 int avan_get_size(queue_header_t *ll);
+
 • Return the number of Nodes in the given Queue Linked List
 
 void avan_cleanup(avan_header_t *header);
+
 • Free the Avan Header, the Three Linked List Queues, and all of their Process Nodes.
+
 • TRILBY-VM will run with no Memory Leaks
