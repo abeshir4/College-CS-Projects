@@ -73,3 +73,13 @@ void avan_cleanup(avan_header_t *header);
 • Free the Avan Header, the Three Linked List Queues, and all of their Process Nodes.
 
 • TRILBY-VM will run with no Memory Leaks
+
+Testing your Code:
+
+This is not necessary to use at all, however, if you want to test your code without running the TRILBY-VM, we do
+have a special src/test_avan_sched.c source file that has a main you can use to call your functions with
+whatever arguments you want and you can then look at the outputs to test your functions in isolation first.
+
+To build: make tester
+
+To run: ./tester
