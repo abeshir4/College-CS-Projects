@@ -101,3 +101,6 @@ typedef struct number_struct {
 
 } Number_t;
 
+To build: make
+
+To run: ./zuon
